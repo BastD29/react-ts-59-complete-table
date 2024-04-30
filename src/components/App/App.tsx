@@ -1,12 +1,13 @@
-import { data } from "../../data/data";
-import DynamicComponent from "../components";
+import Table from "../Table/Table";
 import style from "./App.module.scss";
 
-export default function App() {
+const App: React.FC = () => {
   return (
     <div className={style["app"]}>
-      {/* <h1>App</h1> */}
-      {data.content.body.map((block) => DynamicComponent(block))}
+      {/* <h2>App</h2> */}
+      <Table />
     </div>
   );
-}
+};
+
+export default App;
