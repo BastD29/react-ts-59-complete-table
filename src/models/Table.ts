@@ -7,9 +7,13 @@ type DataType = {
 
 type ColumnType = {
   title: string;
-  // dataIndex: string;
   dataIndex: keyof DataType;
   key: string;
 };
 
-export type { DataType, ColumnType };
+type SortType = {
+  key: keyof DataType;
+  order: "asc" | "desc";
+};
+
+export type { DataType, ColumnType, SortType };

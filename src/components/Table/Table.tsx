@@ -1,16 +1,24 @@
 import TableBody from "./TableBody/TableBody";
 import TableHead from "./TableHead/TableHead";
-import useSort from "../../hooks/useSort";
+import useSort from "../../hooks/useSort2";
+import { DataType } from "../../models/Table";
 import style from "./Table.module.scss";
 
-const Table: React.FC = () => {
-  const { sortedData, handleSort } = useSort();
+type TableProps = {
+  searchedData: DataType[];
+};
+
+const Table: React.FC<TableProps> = ({ searchedData }) => {
+  const { sortedData, handleSort } = useSort(searchedData);
 
   return (
     <table className={style["table"]}>
-      {/* <h2>Table</h2> */}
       <TableHead handleSort={handleSort} />
-      <TableBody data={sortedData} />
+      {searchedData && searchedData.length > 0 ? (
+        <TableBody data={sortedData} />
+      ) : (
+        <div>There is no result for your search.</div>
+      )}
     </table>
   );
 };
