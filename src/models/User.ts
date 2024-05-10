@@ -1,4 +1,4 @@
-type User = {
+type UserType = {
   id: number;
   firstname: string;
   lastname: string;
@@ -6,4 +6,4 @@ type User = {
   address: string;
 };
 
-export type { User };
+export type { UserType };

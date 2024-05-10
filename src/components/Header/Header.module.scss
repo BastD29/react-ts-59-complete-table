@@ -11,12 +11,12 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
-  }
+    gap: 5px;
 
-  // &__buttons > :nth-child(1),
-  // &__buttons > :nth-child(2) {
-  //   margin-right: auto;
-  // }
+    .filter-btn {
+      position: relative;
+    }
+  }
 
   &__buttons > :nth-child(3) {
     margin-left: auto;

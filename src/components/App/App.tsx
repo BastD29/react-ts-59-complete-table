@@ -1,4 +1,4 @@
-import Header from "../Header/Header";
+import Header from "../Header/Header2";
 import Table from "../Table/Table";
 import useSearch from "../../hooks/useSearch";
 import style from "./App.module.scss";

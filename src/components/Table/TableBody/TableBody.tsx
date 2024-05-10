@@ -14,7 +14,16 @@ const TableBody: React.FC<TableBodyProps> = ({ data }) => {
       {data.map((item) => (
         <TableRow key={item.key}>
           {columns.map((column) => (
-            <TableData key={column.key}>{item[column.dataIndex]}</TableData>
+            <TableData key={column.key}>
+              {/* {item[column.dataIndex]} */}
+              {column.render
+                ? column.render(
+                    item[column.dataIndex],
+                    item,
+                    data.indexOf(item)
+                  )
+                : item[column.dataIndex]}
+            </TableData>
           ))}
         </TableRow>
       ))}
