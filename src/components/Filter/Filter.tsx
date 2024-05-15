@@ -2,7 +2,9 @@ import { useState } from "react";
 import style from "./Filter.module.scss";
 
 const Filter: React.FC = () => {
-  const [filter, setFilter] = useState<string | undefined>(undefined);
+  const [
+    /* filter, setFilter */
+  ] = useState<string | undefined>(undefined);
 
   return (
     <div className={style["filter"]}>
