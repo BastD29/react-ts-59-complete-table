@@ -1,17 +1,14 @@
-// import { useState } from "react";
-// import { ModalKeyType, ModalState } from "../models/Modal";
+import { useContext } from "react";
+import { ModalContext } from "../context/ModalContext/ModalContext";
 
-// function useModal(initialState: ModalState) {
-//   const [modal, setModal] = useState<ModalState>(initialState);
+const useModal = () => {
+  const context = useContext(ModalContext);
 
-//   const toggleModal = (modalKey: ModalKeyType) => {
-//     setModal((prev) => ({
-//       ...prev,
-//       [modalKey]: !(prev[modalKey] ?? false),
-//     }));
-//   };
+  if (context === undefined) {
+    throw new Error("useModal must be used within a ModalProvider");
+  }
 
-//   return { modal, toggleModal };
-// }
+  return context;
+};
 
-// export default useModal;
+export { useModal };
