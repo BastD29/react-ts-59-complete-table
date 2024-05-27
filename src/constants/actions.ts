@@ -1,0 +1,29 @@
+// FILTER
+
+const SET_FILTER = "SET_FILTER";
+const CLEAR_FILTER = "CLEAR_FILTER";
+
+// ROWS
+
+const SET_ROWS = "SET_ROWS";
+
+// COLUMNS
+
+const SET_COLUMNS = "SET_COLUMNS";
+
+// SORT
+
+const SET_SORT = "SET_SORT";
+const CLEAR_SORT = "CLEAR_SORT";
+
+export {
+  SET_FILTER,
+  CLEAR_FILTER,
+  //
+  SET_ROWS,
+  //
+  SET_COLUMNS,
+  //
+  SET_SORT,
+  CLEAR_SORT,
+};

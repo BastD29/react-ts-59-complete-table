@@ -1,4 +1,4 @@
-import { ModalState } from "../models/Modal";
+import { ModalState } from "../models/modal";
 
 const modals: ModalState = {
   ModalContent1: false,

@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { useModalContext } from "../../hooks/contexts/useModalContext";
 import { usePopoverContext } from "../../hooks/contexts/usePopoverContext";
-import SearchInput from "../Inputs/SearchInput/SearchInput";
+import SearchInput from "../Inputs/SearchInput/SearchInput2";
 import FilterIcon from "../Icons/FilterIcon/FilterIcon";
 import ColumnsIcon from "../Icons/ColumnsIcon/ColumnsIcon";
 import Button from "../Button/Button";
@@ -11,12 +11,12 @@ import PopoverContent from "../Popover/PopoverContent/PopoverContent";
 import PopoverContent2 from "../Popover/PopoverContent2/PopoverContent2";
 import style from "./Header.module.scss";
 
-type HeaderProps = {
-  searchTerm: string;
-  setSearchTerm: React.Dispatch<React.SetStateAction<string>>;
-};
+// type HeaderProps = {
+//   searchTerm: string;
+//   setSearchTerm: React.Dispatch<React.SetStateAction<string>>;
+// };
 
-const Header: React.FC<HeaderProps> = ({ searchTerm, setSearchTerm }) => {
+const Header: React.FC = () => {
   const buttonRef = useRef<HTMLButtonElement>(null);
   const buttonRef2 = useRef<HTMLButtonElement>(null);
 
@@ -25,10 +25,7 @@ const Header: React.FC<HeaderProps> = ({ searchTerm, setSearchTerm }) => {
 
   return (
     <header className={style["header"]}>
-      <SearchInput
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-      />
+      <SearchInput />
       <div className={style["header__buttons"]}>
         <Button
           ref={buttonRef}
