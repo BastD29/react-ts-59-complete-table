@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { useModalContext } from "../../hooks/contexts/useModalContext";
 import { usePopoverContext } from "../../hooks/contexts/usePopoverContext";
-import SearchInput from "../Inputs/SearchInput/SearchInput2";
+import SearchInput from "../Inputs/SearchInput/SearchInput3";
 import FilterIcon from "../Icons/FilterIcon/FilterIcon";
 import ColumnsIcon from "../Icons/ColumnsIcon/ColumnsIcon";
 import Button from "../Button/Button";
@@ -9,8 +9,8 @@ import PlusIcon from "../Icons/PlusIcon/PlusIcon";
 import ModalContent1 from "../Modal/ModalContent1/ModalContent1";
 // import PopoverContent from "../Popover/PopoverContent/PopoverContent";
 import PopoverContent2 from "../Popover/PopoverContent2/PopoverContent2";
+import Filter from "../Filter/Filter2";
 import style from "./Header.module.scss";
-import Filter from "../Filter/Filter";
 
 // type HeaderProps = {
 //   searchTerm: string;

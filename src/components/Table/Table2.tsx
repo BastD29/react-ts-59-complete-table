@@ -1,7 +1,7 @@
 import TableBody from "./TableBody/TableBody2";
 import TableHead from "./TableHead/TableHead2";
 import style from "./Table.module.scss";
-import { useRows } from "../../hooks/useRows";
+import { useRows } from "../../hooks/useRows2";
 
 // type TableProps = {
 //   searchedData: DataType[];

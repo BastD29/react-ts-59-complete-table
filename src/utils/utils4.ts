@@ -1,6 +1,5 @@
-import { FilterType } from "../models/filter";
+import { FilterType } from "../models/filter2";
 import { PlantType } from "../models/plant";
-
 import { SortType } from "../models/sort";
 
 function isEmpty(obj: object): boolean {
@@ -88,6 +87,32 @@ function filterRows(rows: PlantType[], filters: FilterType): PlantType[] {
   );
 }
 
+const filterPlants = (
+  plants: PlantType[],
+  filters: FilterType
+): PlantType[] => {
+  if (isEmpty(filters)) return plants;
+
+  return plants.filter((plant) => {
+    const matchesFilters = Object.keys(filters).every((key) => {
+      if (key === "search") {
+        const searchQuery = filters[key][0]?.toLowerCase();
+        return plant.name.toLowerCase().includes(searchQuery);
+      }
+
+      const filterValues = filters[key];
+      console.log("filterValues:", filterValues);
+
+      return (
+        filterValues.length === 0 ||
+        filterValues.includes(plant[key as keyof Omit<PlantType, "id">])
+      );
+    });
+
+    return matchesFilters;
+  });
+};
+
 function sortRows(rows: PlantType[], sort: SortType): PlantType[] {
   return rows.sort((a, b) => {
     const { order, orderBy } = sort;
@@ -113,4 +138,4 @@ function sortRows(rows: PlantType[], sort: SortType): PlantType[] {
   });
 }
 
-export { filterRows, sortRows };
+export { filterRows, filterPlants, sortRows };
