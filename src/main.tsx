@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./components/App/App2.tsx";
-import { ModalProvider } from "./context/ModalContext/ModalProvider.tsx";
+import { ModalProvider } from "./context/ModalContext/ModalProvider2.tsx";
 import { PopoverProvider } from "./context/PopoverContext/PopoverProvider.tsx";
 import { FilterProvider } from "./context/FilterContext/FilterProvider2.tsx";
 import { RowsProvider } from "./context/RowsContext/RowsProvider.tsx";

@@ -1,15 +1,15 @@
 import { useRef } from "react";
-import { useModalContext } from "../../hooks/contexts/useModalContext";
 import { usePopoverContext } from "../../hooks/contexts/usePopoverContext";
 import SearchInput from "../Inputs/SearchInput/SearchInput3";
 import FilterIcon from "../Icons/FilterIcon/FilterIcon";
 import ColumnsIcon from "../Icons/ColumnsIcon/ColumnsIcon";
 import Button from "../Button/Button";
-import PlusIcon from "../Icons/PlusIcon/PlusIcon";
+// import { useModalContext } from "../../hooks/contexts/useModalContext";
+// import PlusIcon from "../Icons/PlusIcon/PlusIcon";
+// import Form from "../Form/Form";
 import PopoverContent2 from "../Popover/PopoverContent2/PopoverContent2";
 import Filter from "../Filter/Filter2";
 import style from "./Header.module.scss";
-import Form from "../Form/Form";
 
 // type HeaderProps = {
 //   searchTerm: string;
@@ -20,7 +20,7 @@ const Header: React.FC = () => {
   const buttonRef = useRef<HTMLButtonElement>(null);
   const buttonRef2 = useRef<HTMLButtonElement>(null);
 
-  const { setModal } = useModalContext();
+  // const { setModal } = useModalContext();
   const { setPopover } = usePopoverContext();
 
   return (
@@ -40,9 +40,9 @@ const Header: React.FC = () => {
           <ColumnsIcon size={20} />
         </Button>
 
-        <Button onClick={() => setModal(<Form />)}>
+        {/* <Button onClick={() => setModal(<Form />)}>
           <PlusIcon size={20} />
-        </Button>
+        </Button> */}
       </div>
     </header>
   );

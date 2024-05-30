@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import {
   ADD_ROW,
   CLEAR_FILTER,
@@ -5,8 +6,10 @@ import {
   DELETE_ROW,
   SET_COLUMNS,
   SET_FILTER,
+  SET_MODAL,
   SET_ROWS,
   SET_SORT,
+  UNSET_MODAL,
   UPDATE_ROW,
 } from "../constants/actions";
 import { ColumnType } from "./column";
@@ -46,4 +49,17 @@ type ClearSortAction = { type: typeof CLEAR_SORT };
 
 type SortAction = SetSortAction | ClearSortAction;
 
-export type { FilterAction, RowsAction, SortAction, ColumnsAction };
+// MODAL ACTIONS
+
+type SetModalAction = { type: typeof SET_MODAL; payload: ReactNode };
+type UnsetModalAction = { type: typeof UNSET_MODAL };
+
+type ModalAction = SetModalAction | UnsetModalAction;
+
+export type {
+  FilterAction,
+  RowsAction,
+  SortAction,
+  ColumnsAction,
+  ModalAction,
+};

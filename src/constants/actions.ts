@@ -19,6 +19,11 @@ const SET_COLUMNS = "SET_COLUMNS";
 const SET_SORT = "SET_SORT";
 const CLEAR_SORT = "CLEAR_SORT";
 
+// MODAL
+
+const SET_MODAL = "SET_MODAL";
+const UNSET_MODAL = "UNSET_MODAL";
+
 export {
   // FILTER
   SET_FILTER,
@@ -33,4 +38,7 @@ export {
   // SORT
   SET_SORT,
   CLEAR_SORT,
+  // MODAL
+  SET_MODAL,
+  UNSET_MODAL,
 };
