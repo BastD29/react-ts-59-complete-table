@@ -1,21 +1,24 @@
 import { ChangeEvent, FormEvent, useState } from "react";
 import { useRowsContext } from "../../hooks/contexts/useRowsContext";
+import { useModalContext } from "../../hooks/contexts/useModalContext";
 import { PlantType } from "../../models/plant";
-import { ADD_ROW } from "../../constants/actions";
+import { ADD_ROW, UNSET_MODAL } from "../../constants/actions";
+// import { useRows } from "../../hooks/useRows2";
 import style from "./Form.module.scss";
-// import { useModalContext } from "../../hooks/contexts/useModalContext";
 
 const Form: React.FC = () => {
-  const { dispatch } = useRowsContext();
-  // const { unsetModal } = useModalContext();
+  const { dispatch: rowDispatch, state: rows } = useRowsContext();
+  // const { rows } = useRows();
+  const { dispatch: modalDispatch } = useModalContext();
 
-  const [row, setRow] = useState<PlantType>({
-    id: 0,
+  const initialFormValues: Omit<PlantType, "id"> = {
     name: "",
     cycle: "",
     sunlight: "",
     watering: "",
-  });
+  };
+
+  const [row, setRow] = useState<Omit<PlantType, "id">>(initialFormValues);
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -24,9 +27,15 @@ const Form: React.FC = () => {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    dispatch({ type: ADD_ROW, payload: row });
-    // dispatch({})
+    const newId = rows.length ? Math.max(...rows.map((r) => r.id)) + 1 : 1;
+    const newRow: PlantType = {
+      id: newId,
+      ...row,
+    };
+    rowDispatch({ type: ADD_ROW, payload: newRow });
+    modalDispatch({ type: UNSET_MODAL });
     console.log("submitted");
+    setRow(initialFormValues);
   };
 
   return (

@@ -4,20 +4,24 @@ import { SET_ROWS } from "../constants/actions";
 import { useFilter } from "./useFilter2";
 import { useSort } from "./useSort3";
 import { filterPlants, sortRows } from "../utils/utils4";
+import { plants } from "../data/plants";
 
 const useRows = () => {
   const { state: rows, dispatch } = useRowsContext();
   const { filters } = useFilter();
   const { sort } = useSort();
 
-  useEffect(() => {
-    dispatch({ type: SET_ROWS, payload: rows });
-  }, [dispatch, rows]);
+  // console.log("xxxxxx:", rows);
 
-  // const filteredRows = useMemo(
-  //   () => filterRows(rows, filters),
-  //   [rows, filters]
-  // );
+  // useEffect(() => {
+  //   dispatch({ type: SET_ROWS, payload: plants });
+  // }, [dispatch, rows]); // ! rows was causing useless re-renders and preventing state persistence
+
+  useEffect(() => {
+    dispatch({ type: SET_ROWS, payload: plants });
+  }, [dispatch]);
+
+  console.log("rows:", rows);
 
   const filteredRows = useMemo(
     () => filterPlants(rows, filters),
