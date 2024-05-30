@@ -11,8 +11,6 @@ const useRows = () => {
   const { filters } = useFilter();
   const { sort } = useSort();
 
-  // console.log("xxxxxx:", rows);
-
   // useEffect(() => {
   //   dispatch({ type: SET_ROWS, payload: plants });
   // }, [dispatch, rows]); // ! rows was causing useless re-renders and preventing state persistence
