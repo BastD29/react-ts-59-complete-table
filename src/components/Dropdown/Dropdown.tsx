@@ -43,7 +43,7 @@ const Dropdown: React.FC<DropdownProps> = ({ dataKey, label, name, value }) => {
     [dataKey]
   );
 
-  console.log("options:", options);
+  // console.log("options:", options);
 
   const handleSelect = (val: string) => {
     handleFilter({ target: { name, value: val } } as ChangeEvent<

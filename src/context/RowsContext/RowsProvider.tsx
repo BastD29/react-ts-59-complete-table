@@ -1,6 +1,6 @@
 import { ReactNode, useReducer } from "react";
 import { RowsContext } from "./RowsContext";
-import { initialRowsState, rowsReducer } from "../../reducers/rowsReducer";
+import { initialRowsState, rowsReducer } from "../../reducers/rowsReducer2";
 
 type RowsProviderProps = {
   children: ReactNode;

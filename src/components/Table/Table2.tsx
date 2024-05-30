@@ -10,16 +10,29 @@ import { useRows } from "../../hooks/useRows2";
 const Table: React.FC = () => {
   const { sortedRows } = useRows();
 
-  return (
-    <table className={style["table"]}>
-      <TableHead />
+  // return (
+  //   <table className={style["table"]}>
+  //     <TableHead />
 
+  //     {sortedRows && sortedRows.length > 0 ? (
+  //       <TableBody sortedRows={sortedRows} />
+  //     ) : (
+  //       <p>There is no result for your search</p>
+  //     )}
+  //   </table>
+  // );
+
+  return (
+    <>
       {sortedRows && sortedRows.length > 0 ? (
-        <TableBody sortedRows={sortedRows} />
+        <table className={style["table"]}>
+          <TableHead />
+          <TableBody sortedRows={sortedRows} />
+        </table>
       ) : (
         <p>There is no result for your search</p>
       )}
-    </table>
+    </>
   );
 };
 

@@ -7,7 +7,7 @@ type SearchInputProps = InputHTMLAttributes<HTMLInputElement>;
 
 const SearchInput: React.FC<SearchInputProps> = ({ value, ...rest }) => {
   const { handleFilter, filters } = useFilter();
-  console.log("filters:", filters);
+  // console.log("filters:", filters);
 
   return (
     <div className={style["search-input-wrapper"]}>

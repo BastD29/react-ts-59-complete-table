@@ -101,7 +101,7 @@ const filterPlants = (
       }
 
       const filterValues = filters[key];
-      console.log("filterValues:", filterValues);
+      // console.log("filterValues:", filterValues);
 
       return (
         filterValues.length === 0 ||

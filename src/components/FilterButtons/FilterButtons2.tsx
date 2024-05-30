@@ -21,7 +21,7 @@ const FilterButtons: React.FC<FilterButtonProps> = ({
   onFilterChange,
 }) => {
   const options = useMemo(() => getOptions(filterKey as keyof PlantType), []);
-  console.log("options:", options);
+  // console.log("options:", options);
 
   return (
     <div className={style["filter-btns"]}>
