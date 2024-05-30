@@ -6,10 +6,10 @@ import FilterIcon from "../Icons/FilterIcon/FilterIcon";
 import ColumnsIcon from "../Icons/ColumnsIcon/ColumnsIcon";
 import Button from "../Button/Button";
 import PlusIcon from "../Icons/PlusIcon/PlusIcon";
-import ModalContent1 from "../Modal/ModalContent1/ModalContent1";
 import PopoverContent2 from "../Popover/PopoverContent2/PopoverContent2";
 import Filter from "../Filter/Filter2";
 import style from "./Header.module.scss";
+import Form from "../Form/Form";
 
 // type HeaderProps = {
 //   searchTerm: string;
@@ -29,10 +29,7 @@ const Header: React.FC = () => {
       <div className={style["header__buttons"]}>
         <Button
           ref={buttonRef}
-          onClick={() =>
-            // setPopover(<PopoverContent />, buttonRef, "bottom-centered")
-            setPopover(<Filter />, buttonRef, "bottom-centered")
-          }
+          onClick={() => setPopover(<Filter />, buttonRef, "bottom-centered")}
         >
           <FilterIcon size={20} />
         </Button>
@@ -43,7 +40,7 @@ const Header: React.FC = () => {
           <ColumnsIcon size={20} />
         </Button>
 
-        <Button onClick={() => setModal(<ModalContent1 />)}>
+        <Button onClick={() => setModal(<Form />)}>
           <PlusIcon size={20} />
         </Button>
       </div>

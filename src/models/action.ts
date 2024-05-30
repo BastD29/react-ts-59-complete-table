@@ -1,10 +1,13 @@
 import {
+  ADD_ROW,
   CLEAR_FILTER,
   CLEAR_SORT,
+  DELETE_ROW,
   SET_COLUMNS,
   SET_FILTER,
   SET_ROWS,
   SET_SORT,
+  UPDATE_ROW,
 } from "../constants/actions";
 import { ColumnType } from "./column";
 import { FilterType } from "./filter";
@@ -20,8 +23,15 @@ type FilterAction = SetFilterAction | ClearFilterAction;
 // ROWS ACTIONS
 
 type SetRowsAction = { type: typeof SET_ROWS; payload: PlantType[] };
+type AddRowAction = { type: typeof ADD_ROW; payload: PlantType };
+type DeleteRowAction = { type: typeof DELETE_ROW; payload: number };
+type UpdateRowAction = { type: typeof UPDATE_ROW; payload: PlantType };
 
-type RowsAction = SetRowsAction;
+type RowsAction =
+  | SetRowsAction
+  | AddRowAction
+  | DeleteRowAction
+  | UpdateRowAction;
 
 // COLUMNS ACTIONS
 

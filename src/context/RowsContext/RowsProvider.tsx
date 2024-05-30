@@ -8,6 +8,7 @@ type RowsProviderProps = {
 
 export const RowsProvider: React.FC<RowsProviderProps> = ({ children }) => {
   const [state, dispatch] = useReducer(rowsReducer, initialRowsState);
+  console.log("state:", state);
 
   return (
     <RowsContext.Provider value={{ state, dispatch }}>

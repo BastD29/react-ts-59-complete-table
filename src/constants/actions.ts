@@ -6,6 +6,9 @@ const CLEAR_FILTER = "CLEAR_FILTER";
 // ROWS
 
 const SET_ROWS = "SET_ROWS";
+const ADD_ROW = "ADD_ROW";
+const DELETE_ROW = "DELETE_ROW";
+const UPDATE_ROW = "UPDATE_ROW";
 
 // COLUMNS
 
@@ -17,13 +20,17 @@ const SET_SORT = "SET_SORT";
 const CLEAR_SORT = "CLEAR_SORT";
 
 export {
+  // FILTER
   SET_FILTER,
   CLEAR_FILTER,
-  //
+  // ROWS
   SET_ROWS,
-  //
+  ADD_ROW,
+  DELETE_ROW,
+  UPDATE_ROW,
+  // COLUMNS
   SET_COLUMNS,
-  //
+  // SORT
   SET_SORT,
   CLEAR_SORT,
 };
