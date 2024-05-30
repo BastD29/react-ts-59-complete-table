@@ -7,9 +7,10 @@ import ColumnsIcon from "../Icons/ColumnsIcon/ColumnsIcon";
 import Button from "../Button/Button";
 import PlusIcon from "../Icons/PlusIcon/PlusIcon";
 import ModalContent1 from "../Modal/ModalContent1/ModalContent1";
-import PopoverContent from "../Popover/PopoverContent/PopoverContent";
+// import PopoverContent from "../Popover/PopoverContent/PopoverContent";
 import PopoverContent2 from "../Popover/PopoverContent2/PopoverContent2";
 import style from "./Header.module.scss";
+import Filter from "../Filter/Filter";
 
 // type HeaderProps = {
 //   searchTerm: string;
@@ -30,7 +31,8 @@ const Header: React.FC = () => {
         <Button
           ref={buttonRef}
           onClick={() =>
-            setPopover(<PopoverContent />, buttonRef, "bottom-centered")
+            // setPopover(<PopoverContent />, buttonRef, "bottom-centered")
+            setPopover(<Filter />, buttonRef, "bottom-centered")
           }
         >
           <FilterIcon size={20} />
