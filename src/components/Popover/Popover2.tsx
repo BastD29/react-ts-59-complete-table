@@ -1,9 +1,7 @@
 import ReactDOM from "react-dom";
 import { CSSProperties, ReactNode, RefObject, useEffect, useRef } from "react";
-import { PopoverPosition } from "../../models/popover";
+import { PopoverPosition } from "../../models/popover2";
 import style from "./Popover.module.scss";
-// import useClickOutside from "../../hooks/useOutsideClick";
-// import { usePopoverContext } from "../../hooks/contexts/usePopoverContext";
 
 type PopoverProps = {
   children: ReactNode;
@@ -19,10 +17,6 @@ const Popover: React.FC<PopoverProps> = ({
   offset = 10,
 }) => {
   const popoverRef = useRef(document.createElement("div"));
-
-  // const { dispatch } = usePopoverContext();
-
-  // useClickOutside(targetRef, dispatch({ type: UNSET_POPOVER }));
 
   useEffect(() => {
     const popoverNode = popoverRef.current;
