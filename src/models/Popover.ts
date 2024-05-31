@@ -3,4 +3,14 @@ type PopoverContextType = {
   setPopover: (popover: React.ReactNode) => void;
 };
 
-export type { PopoverContextType };
+type PopoverPosition =
+  | "top-centered"
+  | "bottom-centered"
+  | "right-centered"
+  | "left-centered"
+  | "bottom"
+  | "top"
+  | "right"
+  | "left";
+
+export type { PopoverContextType, PopoverPosition };

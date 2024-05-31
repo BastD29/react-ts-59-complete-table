@@ -1,8 +1,7 @@
 import { FC, MouseEvent } from "react";
-
-import style from "./Modal.module.scss";
 import { useModalContext } from "../../hooks/contexts/useModalContext";
 import { UNSET_MODAL } from "../../constants/actions";
+import style from "./Modal.module.scss";
 
 type ModalProps = {
   children: React.ReactNode;
@@ -16,7 +15,6 @@ const Modal: FC<ModalProps> = ({ children }) => {
   return (
     <div
       className={style["modal-overlay"]}
-      /* onClick={unsetModal} */
       onClick={() => dispatch({ type: UNSET_MODAL })}
     >
       <div className={style["modal-content"]} onClick={stopPropagation}>

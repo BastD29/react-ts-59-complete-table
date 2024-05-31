@@ -19,8 +19,6 @@ const useRows = () => {
     dispatch({ type: SET_ROWS, payload: plants });
   }, [dispatch]);
 
-  console.log("rows:", rows);
-
   const filteredRows = useMemo(
     () => filterPlants(rows, filters),
     [rows, filters]

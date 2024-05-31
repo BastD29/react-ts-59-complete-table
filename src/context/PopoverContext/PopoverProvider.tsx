@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { PopoverContext } from "./PopoverContext";
-import Popover, { PopoverPosition } from "../../components/Popover/Popover";
+import Popover from "../../components/Popover/Popover";
 import useClickOutside from "../../hooks/useOutsideClick";
+import { PopoverPosition } from "../../models/popover";
 
 type PopoverProviderProps = {
   children: React.ReactNode;

@@ -1,5 +1,5 @@
 import React from "react";
-import { PopoverPosition } from "../../components/Popover/Popover";
+import { PopoverPosition } from "../../models/popover";
 
 type PopoverContextType = {
   popoverContent: React.ReactNode;

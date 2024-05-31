@@ -34,7 +34,7 @@ const Form: React.FC = () => {
     };
     rowDispatch({ type: ADD_ROW, payload: newRow });
     modalDispatch({ type: UNSET_MODAL });
-    console.log("submitted");
+    // console.log("submitted");
     setRow(initialFormValues);
   };
 

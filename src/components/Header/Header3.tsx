@@ -9,8 +9,8 @@ import PlusIcon from "../Icons/PlusIcon/PlusIcon";
 import PopoverContent2 from "../Popover/PopoverContent2/PopoverContent2";
 import Filter from "../Filter/Filter2";
 import Form from "../Form/Form";
+import { SET_MODAL, SET_POPOVER } from "../../constants/actions";
 import style from "./Header.module.scss";
-import { SET_MODAL } from "../../constants/actions";
 
 // type HeaderProps = {
 //   searchTerm: string;
@@ -22,8 +22,9 @@ const Header: React.FC = () => {
   const buttonRef2 = useRef<HTMLButtonElement>(null);
 
   // const { setModal } = useModalContext();
-  const { dispatch } = useModalContext();
-  const { setPopover } = usePopoverContext();
+  // const { setPopover } = usePopoverContext();
+  const { dispatch: modalDispatch } = useModalContext();
+  const { dispatch: popoverDispatch } = usePopoverContext();
 
   return (
     <header className={style["header"]}>
@@ -31,19 +32,35 @@ const Header: React.FC = () => {
       <div className={style["header__buttons"]}>
         <Button
           ref={buttonRef}
-          onClick={() => setPopover(<Filter />, buttonRef, "bottom-centered")}
+          // onClick={() => setPopover(<Filter />, buttonRef, "bottom-centered")}
+          onClick={() =>
+            popoverDispatch({
+              type: SET_POPOVER,
+              payload: {
+                content: <Filter />,
+                ref: buttonRef,
+                position: "bottom-centered",
+              },
+            })
+          }
         >
           <FilterIcon size={20} />
         </Button>
         <Button
           ref={buttonRef2}
-          onClick={() => setPopover(<PopoverContent2 />, buttonRef2)}
+          // onClick={() => setPopover(<PopoverContent2 />, buttonRef2)}
+          onClick={() =>
+            popoverDispatch({
+              type: SET_POPOVER,
+              payload: { content: <PopoverContent2 />, ref: buttonRef2 },
+            })
+          }
         >
           <ColumnsIcon size={20} />
         </Button>
 
         <Button
-          onClick={() => dispatch({ type: SET_MODAL, payload: <Form /> })}
+          onClick={() => modalDispatch({ type: SET_MODAL, payload: <Form /> })}
         >
           <PlusIcon size={20} />
         </Button>

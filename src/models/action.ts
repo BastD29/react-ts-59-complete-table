@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode, RefObject } from "react";
 import {
   ADD_ROW,
   CLEAR_FILTER,
@@ -7,14 +7,17 @@ import {
   SET_COLUMNS,
   SET_FILTER,
   SET_MODAL,
+  SET_POPOVER,
   SET_ROWS,
   SET_SORT,
   UNSET_MODAL,
+  UNSET_POPOVER,
   UPDATE_ROW,
 } from "../constants/actions";
 import { ColumnType } from "./column";
 import { FilterType } from "./filter";
 import { PlantType } from "./plant";
+import { PopoverPosition } from "./popover2";
 
 // FILTER ACTIONS
 
@@ -56,10 +59,27 @@ type UnsetModalAction = { type: typeof UNSET_MODAL };
 
 type ModalAction = SetModalAction | UnsetModalAction;
 
+// POPOVER ACTIONS
+
+// type SetPopoverAction = { type: typeof SET_POPOVER; payload: ReactNode };
+type SetPopoverAction = {
+  type: typeof SET_POPOVER;
+  payload: {
+    content: ReactNode;
+    ref: RefObject<HTMLElement>;
+    position?: PopoverPosition;
+    offset?: number;
+  };
+};
+type UnsetPopoverAction = { type: typeof UNSET_POPOVER };
+
+type PopoverAction = SetPopoverAction | UnsetPopoverAction;
+
 export type {
   FilterAction,
   RowsAction,
   SortAction,
   ColumnsAction,
   ModalAction,
+  PopoverAction,
 };

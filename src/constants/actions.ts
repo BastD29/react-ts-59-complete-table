@@ -24,6 +24,11 @@ const CLEAR_SORT = "CLEAR_SORT";
 const SET_MODAL = "SET_MODAL";
 const UNSET_MODAL = "UNSET_MODAL";
 
+// POPOVER
+
+const SET_POPOVER = "SET_POPOVER";
+const UNSET_POPOVER = "UNSET_POPOVER";
+
 export {
   // FILTER
   SET_FILTER,
@@ -41,4 +46,7 @@ export {
   // MODAL
   SET_MODAL,
   UNSET_MODAL,
+  // POPOVER
+  SET_POPOVER,
+  UNSET_POPOVER,
 };
