@@ -14,7 +14,7 @@ const Popover: React.FC<PopoverProps> = ({
   children,
   targetRef,
   position = "bottom",
-  offset = 10,
+  offset = 2,
 }) => {
   const popoverRef = useRef(document.createElement("div"));
 

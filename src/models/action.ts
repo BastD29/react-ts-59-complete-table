@@ -48,6 +48,7 @@ type ColumnsAction = SetColumnsAction;
 // SORT ACTIONS
 
 type SetSortAction = { type: typeof SET_SORT; payload: keyof PlantType };
+// type SetSortAction = { type: typeof SET_SORT; payload: string };
 type ClearSortAction = { type: typeof CLEAR_SORT };
 
 type SortAction = SetSortAction | ClearSortAction;

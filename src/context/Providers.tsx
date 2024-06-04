@@ -9,8 +9,8 @@ const providers = [
   SortProvider, // outermost provider
   RowsProvider,
   FilterProvider,
-  PopoverProvider,
-  ModalProvider, // innermost provider
+  ModalProvider,
+  PopoverProvider, // innermost provider
 ];
 
 type ProviderProps = {
